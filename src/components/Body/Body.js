@@ -60,44 +60,46 @@ function Body() {
   });
 
   return (
-    <div className={styles.container}>
-      <p className={styles.heading}>Resume Builder</p>
-      <div className={styles.toolbar}>
-        <div className={styles.colors}>
-          {colors.map((item) => (
-            <span
-              key={item}
-              style={{ backgroundColor: item }}
-              className={`${styles.color} ${
-                activeColor === item ? styles.active : ""
-              }`}
-              onClick={() => setActiveColor(item)}
-            />
-          ))}
+    <div className={styles.pageBackground}>
+      <div className={styles.container}>
+        <div className={styles.toolbar}>
+        <p className={styles.heading}>RESUME AI</p>
+          {/* <div className={styles.colors}>
+            {colors.map((item) => (
+              <span
+                key={item}
+                style={{ backgroundColor: item }}
+                className={`${styles.color} ${
+                  activeColor === item ? styles.active : ""
+                }`}
+                onClick={() => setActiveColor(item)}
+              />
+            ))}
+          </div> */}
+          <ReactToPrint
+            trigger={() => {
+              return (
+                <button>
+                  Download <ArrowDown />
+                </button>
+              );
+            }}
+            content={() => resumeRef.current}
+          />
         </div>
-        <ReactToPrint
-          trigger={() => {
-            return (
-              <button>
-                Download <ArrowDown />
-              </button>
-            );
-          }}
-          content={() => resumeRef.current}
-        />
-      </div>
-      <div className={styles.main}>
-        <Editor
-          sections={sections}
-          information={resumeInformation}
-          setInformation={setResumeInformation}
-        />
-        <Resume
-          ref={resumeRef}
-          sections={sections}
-          information={resumeInformation}
-          activeColor={activeColor}
-        />
+        <div className={styles.main}>
+          <Editor
+            sections={sections}
+            information={resumeInformation}
+            setInformation={setResumeInformation}
+          />
+          {/* <Resume
+            ref={resumeRef}
+            sections={sections}
+            information={resumeInformation}
+            activeColor={activeColor}
+          /> */}
+        </div>
       </div>
     </div>
   );
