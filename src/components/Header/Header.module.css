@@ -1,31 +1,22 @@
 .container {
-  padding: 50px 30px;
-  text-align: center;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-evenly;
-  gap: 30px;
-  background-color: rgb(238, 252, 255);
-  min-height: 85vh;
+  line-height: 30px;
+  background-color: white;
+  box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.1);
 }
 
-.heading {
-  margin: 0 auto;
-  max-width: 500px;
-  color: #000;
-  font-size: 3.1rem;
-  line-height: 4.1rem;
-  font-weight: bold;
-  letter-spacing: 1px;
+.logo {
+  width: 72px;
+  height: 61px;
+  margin-left: 80px;
+  margin-top: 9px;
+  border: 1px solid #FFFFFF;
 }
 
-.heading span {
-  background-clip: text;
-  background-image: linear-gradient(to right, #239ce2, #1369b9);
-  color: transparent;
-}
-
-.right img {
-  width: 400px;
+.container span {
+  position: absolute;
+  margin-top: 24px;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 30px;
+  color: #000000;
 }
